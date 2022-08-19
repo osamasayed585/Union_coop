@@ -17,9 +17,9 @@ MVVM is pretty good in such cases. It goes one step further in separating the re
 - [Timber](https://github.com/JakeWharton/timber) - Log
 - Following MVVM Architectural Design Pattern
 - [Material Components](https://github.com/material-components/material-components-android) - Material Design
-- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-- [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
-- [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/)
+- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel): Stores UI-related data that isn't destroyed on UI changes.
+- [LiveData](https://developer.android.com/topic/libraries/architecture/livedata): Data objects that notify views when the underlying database changes.
+- [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/): Android development with lombok is easy and won't make your android application any 'heavier' because lombok is a compile-time only library
 - OOP specifically professional use of inheritance
 - Swipe Refresh Layout
 - Circle ImageView
