@@ -1,5 +1,6 @@
 package com.visionstech.demoapp.ui.$base;
 
+import android.content.DialogInterface;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,8 +31,14 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void onApiError(BaseResponse response) {
-        errorHandleDialog.setBaseResponse(response);
+        errorHandleDialog.setBaseResponse(response, this::onErrorHandlerDialogOkClick);
         errorHandleDialog.show();
+    }
+
+    private void onErrorHandlerDialogOkClick(DialogInterface dialog, int which) {
+        errorHandleDialog.dismiss();
+        finish();
+        startActivity(getIntent());
     }
 
     public void onLoading(boolean isLoading) {

@@ -26,17 +26,34 @@
 
     </FrameLayout>
 
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_items"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/row_item_ny" />
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_item_ny" />
+
+            <TextView
+                android:id="@+id/not_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/not_available_now_try_again"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

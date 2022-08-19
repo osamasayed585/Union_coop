@@ -31,6 +31,7 @@ public class HomeViewModel extends BaseViewModel {
                 Observable.just(key)
                         .doOnNext(__ -> getOnLoadingMutableLiveData().setValue(true))
                         .observeOn(Schedulers.io())
+                        .takeWhile(this::isInternetAvailable)
                         .flatMap(data -> getRepository().fetchAllData(data))
                         .observeOn(AndroidSchedulers.mainThread())
                         .doFinally(() -> getOnLoadingMutableLiveData().setValue(false))

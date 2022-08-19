@@ -1,6 +1,7 @@
 package com.visionstech.demoapp.core.network.responses;
 
 import com.google.gson.annotations.SerializedName;
+import com.visionstech.demoapp.core.network.beans.Fault;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,14 +15,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BaseResponse {
-    /*   copyright
-    *  Copyright (c) 2022 The New York Times Company.  All Rights Reserved.
-    *
-    * */
+    /*  fault:
+             faultstring: "Invalid ApiKey",
+
+    */
+
+    private Fault fault;
 
     private String status;
 
     private String copyright;
+
+    private String message;
+
+    private boolean success;
 
     @SerializedName("num_results")
     private String numResults;

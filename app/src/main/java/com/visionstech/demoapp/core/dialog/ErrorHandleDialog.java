@@ -30,24 +30,27 @@ public class ErrorHandleDialog {
     }
 
 
-    public void setBaseResponse(BaseResponse response) {
+    public void setBaseResponse(BaseResponse response, DialogInterface.OnClickListener onClickListener) {
 
-            if (response == null) {
-                errorAlertDialog.setMessage(mContext.getString(R.string.tryAgain));
-                errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE, mContext.getResources().getString(R.string.ok), (dialog, which) -> {
+        if (!response.getStatus().equals("OK")) {
+            errorAlertDialog.setMessage(mContext.getString(R.string.tryAgain));
+            errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE, mContext.getResources().getString(R.string.ok), onClickListener);
+        } else if (response.getFault() != null) {
+            errorAlertDialog.setMessage(response.getFault().getFaultstring());
+            errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE, mContext.getResources().getString(R.string.ok), (dialog, which) -> {
 
-                    Intent intent = new Intent(mContext, HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    mContext.startActivity(intent);
-                });
-            } else {
-                errorAlertDialog.setMessage(response.getStatus());
-                errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                        mContext.getResources().getString(R.string.ok),
-                        (dialog, which) -> errorAlertDialog.dismiss());
-            }
+                Intent intent = new Intent(mContext, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                mContext.startActivity(intent);
+            });
+        } else {
+            errorAlertDialog.setMessage(response.getMessage());
+            errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                    mContext.getResources().getString(R.string.ok),
+                    (dialog, which) -> errorAlertDialog.dismiss());
+        }
 
     }
 

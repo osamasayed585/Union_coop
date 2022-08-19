@@ -3,8 +3,9 @@
 
 
     <string name="sample_key">kjWL3IMsOTCUgfZWnsq9HJix6bGqMjGS</string>
-    <string name="error">error</string>
-    <string name="ok">Ok</string>
-    <string name="tryAgain">There is a problem, click ok to try again</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="tryAgain">There is a problem, click OK to try again</string>
     <string name="android_machine_test">Android Machine Test</string>
+    <string name="not_available_now_try_again">Not Available Now Try Again...</string>
 </resources>

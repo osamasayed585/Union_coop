@@ -1,6 +1,7 @@
 package com.visionstech.demoapp.ui.main;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -61,7 +62,15 @@ public class HomeActivity extends BaseActivity {
     private void onNyResponse(NYResponse nyResponse) {
         // here I populate data to recycler view
         mBinding.refreshLayout.setRefreshing(false);
-        mMainAdapter.setData(nyResponse.getResults());
+
+        if (nyResponse != null) {
+            mBinding.rvItems.setVisibility(View.VISIBLE);
+            mMainAdapter.setData(nyResponse.getResults());
+        } else {
+            mBinding.rvItems.setVisibility(View.GONE);
+            mBinding.notAvailable.setVisibility(View.VISIBLE);
+
+        }
     }
 
 

@@ -42,8 +42,12 @@ public class BaseViewModel extends ViewModel {
     }
 
     protected void onFailure(Throwable throwable) {
-        onApiErrorMutableLiveData.setValue(BaseResponse.builder().copyright("aaaaaaaaaaa").build()); // todo return again
+        onApiErrorMutableLiveData.setValue(BaseResponse.builder().message(throwable.toString()).success(false).build());
         Timber.e(throwable);
+    }
+
+    public boolean isInternetAvailable(Object object) {
+        return true;
     }
 
 
