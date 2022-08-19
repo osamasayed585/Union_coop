@@ -33,16 +33,16 @@ public class BaseViewModel extends ViewModel {
 
 
     protected boolean isSuccess(BaseResponse response) {
-        if (!response.getStatus().equals("OK")) {
+        if (response.getNumResults() == null) {
             onApiErrorMutableLiveData.setValue(response);
-            Timber.e("From new BaseViewModel %s", response.getStatus());
+            Timber.e("From new BaseViewModel %s", response.getFault().getFaultstring());
             return false;
         } else
             return true;
     }
 
     protected void onFailure(Throwable throwable) {
-        onApiErrorMutableLiveData.setValue(BaseResponse.builder().message(throwable.toString()).success(false).build());
+        onApiErrorMutableLiveData.setValue(BaseResponse.builder().copyright(throwable.toString()).build());
         Timber.e(throwable);
     }
 

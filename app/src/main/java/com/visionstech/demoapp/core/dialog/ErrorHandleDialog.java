@@ -32,7 +32,7 @@ public class ErrorHandleDialog {
 
     public void setBaseResponse(BaseResponse response, DialogInterface.OnClickListener onClickListener) {
 
-        if (!response.getStatus().equals("OK")) {
+        if (response.getNumResults() == null) {
             errorAlertDialog.setMessage(mContext.getString(R.string.tryAgain));
             errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE, mContext.getResources().getString(R.string.ok), onClickListener);
         } else if (response.getFault() != null) {
@@ -46,7 +46,7 @@ public class ErrorHandleDialog {
                 mContext.startActivity(intent);
             });
         } else {
-            errorAlertDialog.setMessage(response.getMessage());
+            errorAlertDialog.setMessage(mContext.getResources().getString(R.string.tryAgain));
             errorAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
                     mContext.getResources().getString(R.string.ok),
                     (dialog, which) -> errorAlertDialog.dismiss());

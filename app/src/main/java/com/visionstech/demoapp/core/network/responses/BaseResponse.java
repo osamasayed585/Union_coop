@@ -26,10 +26,6 @@ public class BaseResponse {
 
     private String copyright;
 
-    private String message;
-
-    private boolean success;
-
     @SerializedName("num_results")
     private String numResults;
 }
