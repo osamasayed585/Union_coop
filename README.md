@@ -1,9 +1,13 @@
-# Union Coop
-# Welcome dear Eng/ Sajid
+# Welcome Dear hiring manager,
 
 ### I did the task to the fullest. I wish you would appreciate my effort in producing this work.
 
 A Simple Demo-App built to demonstrate the use of Modern Android development tools - (Java, RxJava, Hilt-Dependency Injection, MVVM, Material Design Components).
+## Architecture
+MVVM is pretty good in such cases. It goes one step further in separating the responsibilities of your code base. It clearly abstracts the logic of the actions that can be performed in the app.
+
+![mvvm](https://user-images.githubusercontent.com/68209547/185715692-75c238b2-bee7-48f6-a26b-b88d696c7c9b.png)
+
 
 ## Built With 🛠
 - [Java](https://www.java.com/en/) 100% Java-only.
