@@ -49,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:text="@string/not_available_now_try_again"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="16sp" />
