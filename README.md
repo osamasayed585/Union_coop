@@ -1,4 +1,4 @@
-# Welcome Dear hiring manager,
+# Welcome dear hiring manager,
 
 ### I did the task to the fullest. I wish you would appreciate my effort in producing this work.
 
