@@ -32,7 +32,10 @@ MVVM is pretty good in such cases. It goes one step further in separating the re
 #### If you see the code as red like errors, you should know it works, but you should add [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) plugin
 
 ## Result 📺
-https://user-images.githubusercontent.com/68209547/185631442-9734ca93-3b6d-478c-9ca5-24c4f9b907c6.mp4
+
+https://user-images.githubusercontent.com/68209547/185769981-e208ad9d-63d0-469b-b5d8-341fd8970e7f.mp4
+
+
 
 
 
