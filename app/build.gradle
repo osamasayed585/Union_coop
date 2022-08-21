@@ -73,13 +73,12 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
-    //ProgressBars
+    //ProgressBar
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
-    implementation 'net.bohush.geometricprogressview:geometricprogressview:1.1.1'
-    implementation 'com.steelkiwi:sliding-square-loader-view:1.0.0'
 
     //CircleImageView Library
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // SwipeRefreshLayout
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"}
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+}

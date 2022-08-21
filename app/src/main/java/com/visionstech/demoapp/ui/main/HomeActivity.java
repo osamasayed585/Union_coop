@@ -1,5 +1,6 @@
 package com.visionstech.demoapp.ui.main;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 
@@ -66,6 +67,16 @@ public class HomeActivity extends BaseActivity {
         mMainAdapter.setData(nyResponse.getResults());
     }
 
+    @Override
+    public void onErrorHandlerDialogOkClick(DialogInterface dialog, int which) {
+        super.onErrorHandlerDialogOkClick(dialog, which);
+
+        Snackbar.make(mBinding.getRoot(), "No internet connection.!", Snackbar.LENGTH_LONG)
+                .setActionTextColor(getResources().getColor(android.R.color.holo_red_light))
+                .show();
+
+        mBinding.refreshLayout.setRefreshing(false);
+    }
 
     @Override
     protected void onStart() {

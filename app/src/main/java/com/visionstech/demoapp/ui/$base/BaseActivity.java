@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.google.android.material.snackbar.Snackbar;
 import com.visionstech.demoapp.core.dialog.ErrorHandleDialog;
 import com.visionstech.demoapp.core.network.responses.BaseResponse;
 import com.visionstech.demoapp.databinding.ActivityBaseBinding;
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class BaseActivity extends AppCompatActivity {
 
     @Inject
-    ErrorHandleDialog errorHandleDialog;
+    public ErrorHandleDialog errorHandleDialog;
     public SpinKitView progressView;
 
 
@@ -35,10 +36,8 @@ public class BaseActivity extends AppCompatActivity {
         errorHandleDialog.show();
     }
 
-    private void onErrorHandlerDialogOkClick(DialogInterface dialog, int which) {
+    public void onErrorHandlerDialogOkClick(DialogInterface dialog, int which) {
         errorHandleDialog.dismiss();
-        finish();
-        startActivity(getIntent());
     }
 
     public void onLoading(boolean isLoading) {

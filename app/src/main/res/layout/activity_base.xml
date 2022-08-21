@@ -14,7 +14,7 @@
         android:elevation="100dp"
         android:visibility="gone"
         app:SpinKit_Color="@color/black"
-        app:SpinKit_Style="FadingCircle"
+        app:SpinKit_Style="Circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
